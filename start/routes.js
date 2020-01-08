@@ -30,3 +30,7 @@ Route.group(()=>{
 	Route.put('products/:id', 'ProductController.update')
 	Route.delete('products/:id', 'ProductController.delete')
 }).prefix('api')
+
+Route.group(()=>{
+	Route.post('cost', 'PostExampleController.getDataCost');
+}).prefix('rajaongkir-helper');
