@@ -33,4 +33,5 @@ Route.group(()=>{
 
 Route.group(()=>{
 	Route.post('cost', 'PostExampleController.getDataCost');
+	Route.get('city', 'PostExampleController.getDataCity');
 }).prefix('rajaongkir-helper');

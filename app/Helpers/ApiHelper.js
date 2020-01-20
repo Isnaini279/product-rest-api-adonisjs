@@ -14,24 +14,35 @@ const config = () => axios.create({
   },
 });
 
-const getRajaOngkirCost = async (originParam, destinationParam, weightParam, courierParam) => {
+const getRajaOngkirCost = async () => {
 
   const response = config().request({
    method: 'POST',
-      // url: 'api',
+      url: 'api/cost',
       data: {
-      	key: Env.get('RAJAONGKIR_KEY'),
-        origin: originParam,
-        destination: destinationParam,
-        weight: weightParam,
-        courier: courierParam
+        origin: '501',
+        destination: '114',
+        weight: 1700,
+        courier: 'jne'
       }
     })
 
   return response;
 };
 
-//panggil nama variabel function untuk menggunakan method ke bawah:
+const getRajaOngkirCity = async () => {
+
+  const response = config().request({
+   method: 'GET',
+      url: 'city',
+      data: {
+      }
+    })
+
+  return response;
+};
+
+//panggil nama variabel function untuk menggunakan method:
 module.exports = {
-  getRajaOngkirCost
+  getRajaOngkirCost, getRajaOngkirCity
 };
